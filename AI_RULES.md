@@ -68,7 +68,7 @@ Bu belge, projede çalışan tüm yapay zeka kodlama asistanları (GitHub Copilo
 
 ### 2.7. Dosya Depolama ve Arşiv Koruması
 - **Medya Depolama:** Laravel `Storage` Facade (`public` diski — `storage/app/public/guides/media` altında editör görselleri ve `media` tablosu kaydı).
-- **Eski Rehber Arşivi (`resources/`):** Kök dizindeki `resources/` klasörü eski rehberlerin arşividir; mevcut aşamada kapsam dışıdır, salt okunurdur ve dokunulmaz.
+- **Eski Rehber Arşivi (`resources/`):** Kök dizindeki `resources/` klasörü yeni rehberlerin hazırlanmasında kullanılacak yerel içerik kaynağıdır. Henüz veritabanına aktarılmamıştır; salt okunurdur ve `/resources/` ignore kuralıyla GitHub dışında tutulur. Gelecekteki `app/resources/` ise sürüm kontrolüne dahil uygulama kaynaklarını içerir.
 
 ## 3. Kodlama Standartları (Coding Standards - PHP, Laravel & Livewire)
 
@@ -125,8 +125,8 @@ teknoloji-takip-ve-kullanici-rehberleri/
 ├── CLAUDE.md                        # AI asistanlar için hızlı proje özeti ve komutlar
 ├── PLAN.md                          # Onaylı yol haritası, veri modeli ve aşamalar
 ├── TODO.md                          # Açık işler ve bekleyen kararlar
-├── ai_kurallar_ve_yonergeleri.md    # Tüm AI modelleri için kapsamlı mimari ve kodlama kuralları
-├── resources/                       # Eski rehber arşivi (Salt okunur, dokunulmaz)
+├── AI_RULES.md    # Tüm AI modelleri için kapsamlı mimari ve kodlama kuralları
+├── resources/                       # Yerel kaynak rehberler (Salt okunur, Git dışında)
 └── app/                             # Laravel 11 Uygulama Kök Dizini
     ├── app/
     │   ├── Actions/Guides/          # Tekil iş mantığı sınıfları
@@ -200,4 +200,5 @@ teknoloji-takip-ve-kullanici-rehberleri/
   - `fix: [açıklama]` (Örn: `fix: prevent draft guide access for student role`)
   - `refactor: [açıklama]`
   - `chore: [açıklama]`
+- **Yerel İçerik Kuralı:** Kök `/resources/` Git'e eklenmez ve GitHub'a gönderilmez. Laravel kurulduğunda bağımlılık/çıktı dışlamaları `app/` uygulama köküne göre uygulanır; `app/resources/` dışlanmaz.
 - **`.gitignore` Kuralı:** `/vendor/`, `/node_modules/`, `/public/storage`, `/public/build/`, `.env`, `.phpunit.result.cache` ve `database/*.sqlite` dosyalarının repoya eklenmesini engelle.

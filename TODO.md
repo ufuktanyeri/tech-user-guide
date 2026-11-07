@@ -1,20 +1,22 @@
 # TODO.md — Açık İşler, Bekleyen Kararlar ve İlerleme Günlüğü
 
-Son güncelleme: 7 Kasım 2026, 02:35 (Türkiye). Yol haritası ve teknik mimari `PLAN.md` dosyasındadır; bu dosya yalnızca anlık açık işleri, bekleyen kullanıcı kararlarını ve tamamlanan adımları tutar.
+Son güncelleme: 2026-11-07 04:29 (Türkiye). Yol haritası ve teknik mimari `PLAN.md` dosyasındadır; bu dosya anlık açık işleri, bekleyen kullanıcı kararlarını ve tamamlanan adımları tutar.
 
-## 1. Bekleyen (Kullanıcı Kararı ve Onayı)
+## 1. Bekleyen İşler ve Kararlar
 
-- [ ] **Sentez `PLAN.md` ve `CLAUDE.md` Onayı:** Güncellenen sentez mimari planı (`PLAN.md`) incelenip onaylanacak. Onay gelmeden hiçbir kurulum aşamasına başlanmaz.
-- [ ] **Eski Yönerge Dosyalarının Durumu:** Kök dizindeki `django_ai_kurallar_ve_yonergeleri.md` ve `laravel_ai_kurallar_ve_yonergeleri.md` dosyalarının içindeki gerekli mimari ve kalite kuralları `CLAUDE.md` ile `PLAN.md` içine aktarıldı. Ayrıca `.github/copilot-instructions.md` hâlâ bu iki eski dosyaya referans veriyor. Karar bekleyenler:
-  - `.github/copilot-instructions.md` dosyasının `CLAUDE.md` ve `PLAN.md`'yi işaret edecek şekilde güncellenmesi.
-  - Eski iki yönerge dosyasının silinmesi veya `resources/` altına arşivlenmesi.
-- [ ] **VS Code GitHub Hatası:** VS Code kapatılıp açıldığında hata yinelenirse mesaj metni paylaşılacak. Günlüklerdeki adaylar:
-  1. Copilot eklenti pazarının `git pull --ff-only` çağrısının "Filename too long" ile başarısız olması (çözüm adayı: `git config --global core.longpaths true`, **henüz uygulanmadı**).
-  2. VS Code'da GitHub hesabına oturum açılmamış olması.
-- [ ] **Git / GitHub Kurulumu:** Depo: https://www.google.com/search?q=https://github.com/ufuktanyeri/tech-user-guide (kullanıcı oluşturdu; herkese açık; içinde `README.md`, MIT `LICENSE`, Visual Studio şablonu `.gitignore` var). Yerelde henüz `git init` yapılmadı. Karar bekleyenler:
-  - Git kökü (`app/` dizini mi, yoksa tüm proje klasörü mü?).
-  - `.gitignore` şablonunun Laravel + SQLite + Vite standartlarına (`CLAUDE.md` ve `PLAN.md` kurallarına) göre güncellenmesi ve `resources/` arşivinin repoya dahil edilip edilmeyeceği.
-  - İlk commit (`feat: initial commit` / `chore: project setup`) zamanı.
+- [ ] **Uygulama planı onayı:** Git/README/VS Code hazırlığı onaylandı. Laravel kurulumu ve yeni uygulama aşamaları için PLAN.md onayı ayrıca bekleniyor.
+- [ ] **VS Code son adımı:** Proje ayarlarını güncelle, yönerge yollarını ve JSON geçerliliğini doğrula; ayrı commit oluştur.
+- [ ] **GitHub teslimi:** Hazırlık commit'lerini origin/main'e gönder; yerel ve uzak commit'lerin eşleştiğini ve kök resources/ içeriğinin hiçbir commit'e girmediğini doğrula.
+
+**Kesinleşen kararlar**
+
+- Git kökü proje ana dizinidir. Depo: https://github.com/ufuktanyeri/tech-user-guide
+- Kök resources/ yeni rehberler için yerel içerik kaynağıdır; henüz veritabanına aktarılmamıştır ve mevcut haliyle GitHub'a gönderilmez.
+- Laravel'in gelecekteki app/resources/ dizini uygulama kaynaklarıdır ve sürüm kontrolüne dahildir.
+- Ayrıntılı kurallar AI_RULES.md, Copilot giriş yönergesi .github/copilot-instructions.md dosyasındadır.
+- Eski yönerge dosyaları güncel kök dosya listesinde bulunmuyor; bunların silinmesi/taşınması bu çalışmada yapılmadı.
+- Sahiplik sorunu ufukt hesabıyla yeni Git deposu oluşturularak giderildi. Eski boş metadata .git.del/ olarak yerelde korundu ve Git dışında tutuldu; gerekirse yalnızca kullanıcı siler.
+- Eski Copilot eklenti pazarı hatası mevcut proje sahipliği sorunuyla aynı kabul edilmedi; genel Git ayarları değiştirilmedi.
 
 ## 2. Yapılacak (Onay Sonrası, `PLAN.md` Sırasıyla)
 
@@ -43,6 +45,9 @@ Son güncelleme: 7 Kasım 2026, 02:35 (Türkiye). Yol haritası ve teknik mimari
   - Windows 11 kurulum ve çalıştırma adımlarını içeren Türkçe `README.md` yazımı.
 
 ## 3. Tamamlanan
+
+- [x] **7 Kas 2026** — Git deposu ufukt hesabıyla oluşturuldu; uzak main geçmişi ve MIT lisansı korundu. Laravel/Vite ignore, EditorConfig ve satır sonu kuralları hazırlandı; kaynak rehberler commit dışında bırakıldı.
+- [x] **7 Kas 2026** — Türkçe README, proje yönerge bağlantıları, Copilot dosya adı ve kaynak koleksiyonunun yerel kalacağına ilişkin belgeler güncellendi.
 
 - [x] **7 Kas 2026** — Üç ayrı planlama ve yönerge yapısı (`PLAN.md` + `CLAUDE.md` + `TODO.md`, `django_ai_kurallar_ve_yonergeleri.md`, `laravel_ai_kurallar_ve_yonergeleri.md`) teknoloji ve mimari açıdan karşılaştırıldı.
 - [x] **7 Kas 2026** — Sentez mimari (Laravel 11 + Livewire 3 + Alpine.js + Tailwind CSS + TinyMCE + 5 Kategori & 4 Rehber Türü [`How to`, `What is...`, `Readings`, `Glossary`] + Katı PHP/Larastan standartları) oluşturularak `PLAN.md`, `CLAUDE.md` ve `TODO.md` güncellendi.

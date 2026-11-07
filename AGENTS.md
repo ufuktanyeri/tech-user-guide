@@ -2,9 +2,11 @@
 
 This file provides guidance to Codex (claude.ai/code) and AI coding assistants when working with code in this repository.
 
+Ayrıntılı geliştirme kuralları: [AI_RULES.md](AI_RULES.md). Yol haritası: [PLAN.md](PLAN.md). Açık işler: [TODO.md](TODO.md).
+
 ## 1. Proje Özeti ve Çalışma Prensibi
 
-Kullanıcı rehberi hazırlama ve okuma uygulaması (Türkçe arayüz, CHM tarzı iki panelli yerleşim).
+Kullanıcı rehberlerini standart bir içerik ve görünüm yapısında hazırlama, admin dashboard üzerinden oluşturma/güncelleme/silme/yayınlama ve öğrencilere sunma uygulaması (Türkçe arayüz, CHM tarzı iki panelli yerleşim).
 - **`admin` rolü:** Kategori (`Yapay Zeka`, `Web Programlama`, `Geliştirme Araçları`, `Akademik`, `Diğer`) ve rehber türü (`How to`, `What is...`, `Readings`, `Glossary`) seçerek rehber oluşturur, içindekiler ağacını (`sections`) kurar ve her başlığın HTML içeriğini TinyMCE editörüyle yazar.
 - **`user` rolü (Öğrenciler):** Kendi hesaplarını açıp giriş yaparak yayınlanmış rehberleri kategori/tür bazında filtreler; sol panelde açılır/kapanır başlık ağacı ve anlık arama, sağ panelde içerik ve önceki/sonraki adım biçiminde okur.
 
@@ -54,5 +56,5 @@ php artisan test --filter=GuideTest # tek test sınıfını çalıştırır
 - **Ortam Değişkenleri (`config()` Kuralı):** Uygulama kodunda (`app/` altında) asla doğrudan `env()` fonksiyonu çağrılmaz; tüm çevresel değişkenler `config/*.php` dosyaları üzerinden `config('...')` ile okunur.
 - **HTML Güvenliği (XSS Koruması):** TinyMCE editöründen gelen HTML içerik veritabanına kaydedilmeden önce `HtmlSanitizerService` üzerinden temizlenir (yalnızca izinli etiket ve öznitelikler korunur). Öğrenci veya dış kullanıcı girdilerinde asla `{!! !!}` (unescaped output) kullanılmaz.
 - **Test Standardı:** Tüm testler `Tests\TestCase` sınıfından türeyen standart PHPUnit sınıfları olarak (`use RefreshDatabase;` ile izole şekilde) yazılır.
-- **Arşiv Koruması ve Ortam:** `resources/` klasörü eski rehberlerin arşividir; mevcut aşamada salt okunurdur ve dokunulmaz. Windows 11 ortamında kullanıcıya terminal komutu verilirken hangi dizinde (`app/`) çalıştırılacağı açıkça belirtilir.
+- **Arşiv Koruması ve Ortam:** Kök `resources/` klasörü yeni rehberler için yerel içerik kaynağıdır; henüz veritabanına aktarılmamıştır, salt okunurdur ve GitHub'a gönderilmez (`/resources/` ignore kuralı). Gelecekteki `app/resources/` uygulama kaynakları bu dışlamanın kapsamına girmez. Windows 11 ortamında kullanıcıya terminal komutu verilirken hangi dizinde (`app/`) çalıştırılacağı açıkça belirtilir.
 - **Git Kuralları:** Commit mesajlarında Conventional Commits (`feat:`, `fix:`, `refactor:`, `chore:`) standardı kullanılır.

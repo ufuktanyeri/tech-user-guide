@@ -6,6 +6,8 @@ Durum: Sentez mimari planlaması tamamlandı, kurulum onay bekliyor. Son güncel
 
 Admin'in **kategori** (`yapay-zeka`, `web-programlama`, `gelistirme-araclari`, `akademik`, `diger`) ve **rehber türü** (`How to`, `What is...`, `Readings`, `Glossary`) seçerek rehber oluşturduğu, içindekiler başlık ağacını kurup her başlığın zengin HTML içeriğini WYSIWYG editörle yazdığı; öğrencilerin ise kayıt olup giriş yaparak **CHM (Compiled HTML Help)** formatında (sol panelde açılır/kapanır başlık ağacı ve anlık filtreleme, sağda içerik, altta önceki/sonraki adım) okuduğu web uygulamasıdır. Yeni rehberler sürekli eklenecek; yapı buna göre veri odaklı, önbellekli ve genişleyebilir şekilde kurgulanmıştır.
 
+Kök `resources/` klasöründeki mevcut rehberler, içerikleri ortak bir yapıda hazırlamak için yerel kaynak olarak kullanılacaktır. Henüz veritabanına aktarılmamış bu koleksiyon mevcut haliyle GitHub'a gönderilmez. Rehberler admin dashboard üzerinden oluşturulur, güncellenir, silinir ve yayınlanır. Otomatik toplu aktarımın sonraki fazda olması, bu dosyaların içerik kaynağı olarak kullanılmasına engel değildir.
+
 ## 2. Mimari ve Teknoloji Kararları
 
 | Katman | Karar ve Gerekçe |
