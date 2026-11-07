@@ -1,12 +1,12 @@
 # TODO.md — Açık İşler, Bekleyen Kararlar ve İlerleme Günlüğü
 
-Son güncelleme: 2026-11-07 04:30 (Türkiye). Yol haritası ve teknik mimari `PLAN.md` dosyasındadır; bu dosya anlık açık işleri, bekleyen kullanıcı kararlarını ve tamamlanan adımları tutar.
+Son güncelleme: 2026-11-07 04:34 (Türkiye). Yol haritası ve teknik mimari `PLAN.md` dosyasındadır; bu dosya anlık açık işleri, bekleyen kullanıcı kararlarını ve tamamlanan adımları tutar.
 
 ## 1. Bekleyen İşler ve Kararlar
 
 - [ ] **Uygulama planı onayı:** Git/README/VS Code hazırlığı onaylandı. Laravel kurulumu ve yeni uygulama aşamaları için PLAN.md onayı ayrıca bekleniyor.
-- [x] **VS Code son adımı:** Proje ayarları güncellendi; JSON, yönerge yolları ve 21 Git dışlama/dahil etme senaryosu doğrulandı. Ayarlar ayrı commit kapsamında kaydediliyor.
-- [ ] **GitHub teslimi:** Hazırlık commit'lerini origin/main'e gönder; yerel ve uzak commit'lerin eşleştiğini ve kök resources/ içeriğinin hiçbir commit'e girmediğini doğrula.
+- [x] **VS Code son adımı:** Proje ayarları güncellendi; JSON, yönerge yolları ve 21 Git dışlama/dahil etme senaryosu doğrulandı. Ayarlar bb9c6c7 commit'ine kaydedildi; VS Code açıldığında proje main dalıyla tanındı.
+- [x] **GitHub teslimi:** Hazırlık commit'leri origin/main'e gönderildi; yerel/uzak commit eşleşmesi ve GitHub dosya listesi doğrulandı. Kök resources/ ile .git.del/ hiçbir commit'e girmedi.
 
 **Kesinleşen kararlar**
 
