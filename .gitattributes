@@ -1,0 +1,22 @@
+# Metin dosyaları depoda ve çalışma alanında LF kullanır.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# İkili dosyalarda satır sonu dönüşümü yapılmaz.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.pptx binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+
+# Yerel kaynak koleksiyonu değiştirilmez; ayrıca .gitignore ile dışlanır.
+/resources/** -text -diff -merge
