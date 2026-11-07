@@ -1,0 +1,64 @@
+{
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false,
+  "files.associations": {
+    "*.blade.php": "blade"
+  },
+  "emmet.includeLanguages": {
+    "blade": "html"
+  },
+  "[php]": {
+    "editor.tabSize": 4
+  },
+  "[blade]": {
+    "editor.tabSize": 4
+  },
+  "[json][jsonc][javascript][typescript][css][yaml]": {
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.tabSize": 2,
+    "files.trimTrailingWhitespace": false
+  },
+  "files.readonlyInclude": {
+    "resources/**": true
+  },
+  "files.exclude": {
+    ".git.del": true
+  },
+  "files.watcherExclude": {
+    "**/vendor/**": true,
+    "**/node_modules/**": true,
+    "app/public/build/**": true,
+    "app/bootstrap/cache/**": true,
+    "app/storage/framework/**": true,
+    "app/storage/logs/**": true,
+    ".git.del/**": true,
+    "resources/**": true
+  },
+  "search.exclude": {
+    "**/vendor/**": true,
+    "**/node_modules/**": true,
+    "app/public/build/**": true,
+    "app/bootstrap/cache/**": true,
+    "app/storage/framework/**": true,
+    "app/storage/logs/**": true,
+    ".git.del/**": true
+  },
+  "git.enabled": true,
+  "git.autoRepositoryDetection": true,
+  "git.autofetch": true,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "chat.includeReferencedInstructions": true,
+  "chat.useAgentsMdFile": true,
+  "github.copilot.chat.reviewSelection.instructions": [
+    {
+      "file": "AI_RULES.md"
+    }
+  ]
+}
